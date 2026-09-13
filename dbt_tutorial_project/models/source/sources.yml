@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: source #name should match the schema name.
+    database: dbt_tutorial_dev #name should match the database name in the database
+    schema: source #name should match the schema name in the database
+    tables:
+      - name: fact_sales
+      - name: fact_returns
+      - name: dim_date
+      - name: dim_product
+      - name: dim_store
+      - name: dim_customer
