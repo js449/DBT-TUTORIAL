@@ -7,3 +7,33 @@ models:
   - name: bronze_product #  Must match the filename of a model -- including case sensitivity.
     config:
       materialized: view
+
+  - name: bronze_sales #  Must match the filename of a model -- including case sensitivity.
+    columns:
+      - name: sales_id #  Must match the column name in the model -- including case sensitivity.
+        data_tests:
+          - unique
+          - not_null
+      - name: gross_amount
+        data_tests:
+          - generic_non_negative # make sure we are already passing parameters (model and column name) through this model & column name to the generic test.
+
+  - name: bronze_store
+    columns:
+      - name: store_sk
+        data_tests:
+          - unique
+          - not_null
+      - name: store_name
+        data_tests:
+          - accepted_values:
+              values:
+                [
+                  "MegaMart Manhattan",
+                  "MegaMart Brooklyn",
+                  "MegaMart Austin",
+                  "MegaMart San Jose",
+                  "MegaMart Toronto",
+                ]
+              config:
+                severity: warn # set the severity of this test to warn instead of error.
