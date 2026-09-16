@@ -28,7 +28,7 @@ The project leverages dbt's dynamic `ref()` and `source()` functions to automati
 
 - **Data Flow:** External source tables (`dim_customer`, `dim_product`, `fact_sales`) pass through initial cleaning views (`bronze_customer`, `bronze_product`, `bronze_sales`) before joining into the consolidated `silver_salesinfo` table.
 
-![Silver Model Lineage](dbt_tutorial_project/assets/silver_model_lineage.png)
+![Silver Model Lineage](dbt_tutorial_project/assets/silver_model_Lineage.png)
 
 ---
 
@@ -36,7 +36,7 @@ The project leverages dbt's dynamic `ref()` and `source()` functions to automati
 
 - **Data Flow:** Raw `items` data flows into the `source_gold_items` model, which feeds directly into the `gold_items` snapshot model (`SCD Type 2`) to track historic record changes over time.
 
-![Gold Model Lineage](dbt_tutorial_project/assets/gold_model_lineage.png)
+![Gold Model Lineage](dbt_tutorial_project/assets/gold_model_Lineage.png)
 
 ---
 
@@ -161,5 +161,5 @@ dbt compile --project-dir dbt_tutorial_project --profiles-dir dbt_tutorial_proje
 
 ## 👤 Author
 
-- **Portfolio:** [Your GitHub Profile]
-- **LinkedIn:** [Your LinkedIn Profile]
+- **Portfolio:** https://github.com/js449
+- **LinkedIn:** https://www.linkedin.com/in/jsingh284/
